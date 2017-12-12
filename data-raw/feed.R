@@ -26,6 +26,13 @@ feed_dat <- feed_df %>%
     # Fix Duration
     duration = ifelse(str_length(duration) < 8, str_c('00:', duration), duration),
     duration = hms(duration) %>% seconds() %>% as.numeric() / 60,
+    duration = round(duration),
+
+    # Extract Movie title
+    movie = str_extract(title, '(?<=- ).+'),
+    movie = if_else(str_detect(movie, 'LIVE'),
+                    str_extract(movie, '.+(?= LIVE)'),
+                    movie),  # Fix live show titles
 
     # Extract Episode Number
     ep_num = str_extract(title, '(?<=#)\\d+') %>% as.numeric(),
@@ -60,12 +67,19 @@ feed_dat <- feed_dat %>%
       str_detect(title, 'Untraceable') ~ 41.35,
       str_detect(title, 'Saw III') ~ 43,
       TRUE ~ duration
+    ),
+    movie = case_when(
+      str_detect(title, 'Old Dogs') ~ 'Old Dogs',
+      TRUE ~ movie
     )
   )
 
 # Prune data
-feed_dat <- select(feed_dat, ep_num, title, pub_date, pub_datetime, duration,
-                   description, explicit, keywords, scraped_date)
+feed_dat <- feed_dat %>%
+  select(ep_num, movie, pub_date, pub_datetime, duration, description, explicit,
+         keywords, scraped_date, title) %>%
+  filter(!is.na(ep_num)) %>%
+  rename(full_title = title)
 
 # Write Files
 write_csv(feed_dat, "data-raw/feed.csv")
