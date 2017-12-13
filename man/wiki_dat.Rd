@@ -4,7 +4,7 @@
 \name{wiki_dat}
 \alias{wiki_dat}
 \title{Wiki Data}
-\format{A data frame with columns:
+\format{A data frame with 5 columns:
 \describe{
 \item{ep_num}{Episode number}
 \item{final_judgement}{Summary of final judgements on the movie}
@@ -13,7 +13,7 @@
 \item{scraped_date}{Date when wiki was scraped}
 }}
 \source{
-http://flophousepodcast.wikia.com/wiki/Episode_List
+\url{http://flophousepodcast.wikia.com/wiki/Episode_List}
 }
 \usage{
 wiki_dat

@@ -4,15 +4,15 @@
 \name{recs_dat}
 \alias{recs_dat}
 \title{Recommendations}
-\format{A data frame with columns:
+\format{A data frame with 4 columns:
 \describe{
 \item{ep_num}{Episode number}
 \item{host}{Host who made the recommendation}
 \item{imdb_id}{IMDB ID}
-\item{scraped_date}{Date when wiki was scraped}
+\item{scraped_date}{Date when recommendations were scraped}
 }}
 \source{
-http://theflophouserecommends.herokuapp.com/
+\url{http://theflophouserecommends.herokuapp.com/}
 }
 \usage{
 recs_dat

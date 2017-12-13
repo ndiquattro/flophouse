@@ -1,13 +1,15 @@
-Package: flophouse
 Type: Package
-Title: What the Package Does (Title Case)
+Package: flophouse
+Title: The Flophouse Podcast Data
 Version: 0.1.0
-Author: Who wrote it
+Author: person("Nick", "DiQuattro", , "ndiquattro@gmail.com", c("aut", "cre"))
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: Data gathered about Episodes of The Flophouse, including IMDB IDs for featured and recommended movies.
+License: CC0
+Suggests: 
+    testthat
 Encoding: UTF-8
 LazyData: true
-Suggests: testthat
 RoxygenNote: 6.0.1
+URL: https://github.com/ndiquattro/flophouse
+BugReports: https://github.com/ndiquattro/flophouse/issues

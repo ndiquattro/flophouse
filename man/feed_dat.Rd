@@ -4,7 +4,7 @@
 \name{feed_dat}
 \alias{feed_dat}
 \title{Feed Data}
-\format{A data frame with columns:
+\format{A data frame with 10 columns:
 \describe{
 \item{ep_num}{Episode number}
 \item{movie}{Movie title}
@@ -18,7 +18,7 @@
 \item{full_title}{Original title from RSS feed}
 }}
 \source{
-http://theflophouse.libsyn.com/rss
+\url{http://theflophouse.libsyn.com/rss}
 }
 \usage{
 feed_dat

@@ -4,12 +4,15 @@
 \name{movies_dat}
 \alias{movies_dat}
 \title{Movie IDs}
-\format{A data frame with columns:
+\format{A data frame with 3 columns:
 \describe{
 \item{ep_num}{Episode number}
 \item{imdb_id}{IMDB ID}
 \item{scraped_date}{Date when wiki was scraped}
 }}
+\source{
+\url{https://goo.gl/8kNKhM}
+}
 \usage{
 movies_dat
 }

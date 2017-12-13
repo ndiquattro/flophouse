@@ -18,7 +18,10 @@ recs_dat <- raw_recs %>%
   # Make host names presentable
   mutate(host = str_replace(host, '_', ' ') %>% str_to_title(),
          host = if_else(str_detect(host, 'Dan Mccoy'), 'Dan McCoy', host),
-         scraped_date = lubridate::today())
+         scraped_date = lubridate::today()) %>%
+
+  # Order
+  arrange(desc(ep_num))
 
 # Write Files
 write_csv(recs_dat, "data-raw/recommends.csv")
